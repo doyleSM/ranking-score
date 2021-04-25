@@ -1,8 +1,14 @@
-import { RankingScoreModel } from '../../data/models'
-import { Controller, HttpResponse } from './contracts'
-
+import { LastRankingLoader } from '../../domain/usecases'
+import { Controller, HttpResponse, serverError, ok } from './contracts'
+import { RankingScoreViewModel } from '../view-models'
 export class LoadLastRankingController implements Controller {
-  async handle (): Promise<HttpResponse<RankingScoreModel>> {
-
+  constructor (private readonly lastRankingLoader: LastRankingLoader) { }
+  async handle (): Promise<HttpResponse<RankingScoreViewModel[]>> {
+    try {
+      const ranking = await this.lastRankingLoader.load()
+      return ok(RankingScoreViewModel.mapCollection(ranking))
+    } catch (error) {
+      return serverError(error)
+    }
   }
 }
