@@ -1,5 +1,6 @@
-import { LoadLastRankingRepository } from '../../contracts'
-import { RankingScoreModel } from '../../models'
+
+import { LoadLastRankingRepository } from '../../data/contracts'
+import { RankingScoreModel } from '../../data/models'
 import { ranking } from '../data-sources'
 
 export class FakeRankingRepository implements LoadLastRankingRepository {

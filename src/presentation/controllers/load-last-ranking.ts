@@ -1,4 +1,4 @@
-import { RankingScoreModel } from '../../models'
+import { RankingScoreModel } from '../../data/models'
 import { Controller, HttpResponse } from './contracts'
 
 export class LoadLastRankingController implements Controller {
