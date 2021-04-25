@@ -1,6 +1,6 @@
 > # Ranking-score
 
-Aplicação que simula a chamada de uma api externa, para exibição de um ranking de players e heróis seguindo Clean Architeture.
+Aplicação que simula a chamada de uma api externa, para exibição de um ranking de players e heróis seguindo Clean Architecture.
 
 > ## Build & Run
 * ```yarn && yarn build```
